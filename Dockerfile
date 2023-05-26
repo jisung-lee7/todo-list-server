@@ -22,7 +22,7 @@ COPY . .
 RUN npx prisma generate
 
 # Run and expose the server on port 3000
-EXPOSE 3000
+EXPOSE 8080
 
 # A command to start the server
 CMD npm start

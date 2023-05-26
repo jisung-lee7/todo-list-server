@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const PORT: number = 3000;
+const PORT: number = 8080;
 
 app.get("/api/todos", async (req: Request, res: Response) => {
   res.set("Access-Control-Allow-Origin", "*");
