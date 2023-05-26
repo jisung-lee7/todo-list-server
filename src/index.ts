@@ -1,17 +1,17 @@
 import express, { Application, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
+import cors from "cors";
 
 const app: Application = express();
 const prisma = new PrismaClient();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({ origin: "*" }));
 
 const PORT: number = 8080;
 
 app.get("/api/todos", async (req: Request, res: Response) => {
-  res.set("Access-Control-Allow-Origin", "*");
-
   try {
     const allTodos = await prisma.todo.findMany();
     return res.json({
@@ -27,8 +27,6 @@ app.get("/api/todos", async (req: Request, res: Response) => {
 });
 
 app.post("/api/todos", async (req: Request, res: Response) => {
-  res.set("Access-Control-Allow-Origin", "*");
-
   try {
     const { title, description } = req.body;
     const newTodo = await prisma.todo.create({
@@ -50,8 +48,6 @@ app.post("/api/todos", async (req: Request, res: Response) => {
 });
 
 app.put("/api/todos/:id", async (req: Request, res: Response) => {
-  res.set("Access-Control-Allow-Origin", "*");
-
   try {
     const { id } = req.params;
     const { title, description, completed, archived } = req.body;
@@ -79,8 +75,6 @@ app.put("/api/todos/:id", async (req: Request, res: Response) => {
 });
 
 app.delete("/api/todos/:id", async (req: Request, res: Response) => {
-  res.set("Access-Control-Allow-Origin", "*");
-
   try {
     const { id } = req.params;
     const deletedTodo = await prisma.todo.delete({
