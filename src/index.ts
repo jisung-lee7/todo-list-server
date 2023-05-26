@@ -56,10 +56,10 @@ app.put("/api/todos/:id", async (req: Request, res: Response) => {
         id,
       },
       data: {
-        ...(title && { title }),
-        ...(description && { description }),
-        ...(completed && { completed }),
-        ...(archived && { archived }),
+        ...(title !== undefined && { title }),
+        ...(description !== undefined && { description }),
+        ...(completed !== undefined && { completed }),
+        ...(archived !== undefined && { archived }),
       },
     });
     return res.json({
