@@ -13,7 +13,11 @@ const PORT: number = 8080;
 
 app.get("/api/todos", async (req: Request, res: Response) => {
   try {
-    const allTodos = await prisma.todo.findMany();
+    const allTodos = await prisma.todo.findMany({
+      orderBy: {
+        createdAt: "asc",
+      },
+    });
     return res.json({
       success: true,
       data: allTodos,
@@ -52,9 +56,7 @@ app.put("/api/todos/:id", async (req: Request, res: Response) => {
     const { id } = req.params;
     const { title, description, completed, archived } = req.body;
     const updatedTodo = await prisma.todo.update({
-      where: {
-        id,
-      },
+      where: { id },
       data: {
         ...(title !== undefined && { title }),
         ...(description !== undefined && { description }),
