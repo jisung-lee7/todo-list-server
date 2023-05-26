@@ -19,6 +19,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: express
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/Todo?schema=public
     depends_on:
       - postgres
     ports:
