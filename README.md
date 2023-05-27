@@ -17,12 +17,19 @@ Express(REST API) server  is running on port `8080`
 #### schema
 ```typescript
 interface Todo {
+  // todo item id
   id: string;
+  // todo item title
   title: string;
+  // you can ignore this field at this moment
   description?: string;
+  // todo item status (is it completed or not)
   completed: boolean;
+  // todo item status (is it archived or not)
   archived: boolean;
+  // todo item created date
   createdAt: string;
+  // todo item updated date
   updatedAt: string;
 }
 ```
