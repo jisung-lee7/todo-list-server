@@ -1,5 +1,9 @@
 ## Todo Server
 
+### Prerequisite
+
+- Install [Docker](https://www.docker.com/)
+
 ### How to run the server
 
 ```bash
