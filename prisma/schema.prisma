@@ -11,11 +11,11 @@ datasource db {
 }
 
 model Todo {
-  id String @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title String
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  title       String
   description String?
-  completed Boolean @default(false)
-  archived Boolean @default(false)
+  completed   Boolean  @default(false)
+  archived    Boolean  @default(false)
 }
