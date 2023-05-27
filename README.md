@@ -12,7 +12,7 @@ docker compose up --build
 
 ### API urls
 
-Express server is running on port `8080`
+Express(REST API) server  is running on port `8080`
 
 #### schema
 ```typescript
