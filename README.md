@@ -7,7 +7,7 @@
 ### How to run the server
 
 ```bash
-docker compose up
+docker compose up --build
 ```
 
 ### API urls
