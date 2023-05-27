@@ -30,6 +30,65 @@ interface Todo {
 #### endpoints
 
 1. `GET /api/todos` - Get all todos
-2. `POST /api/todos` - Add todo (payload: title, description)
-3. `PUT /api/todos/:todoId` - Update todo (payload: title, description, archived, completed)
+
+**Example**
+```typescript
+fetch(`http://localhost:8080/api/todos/496`, {
+  method: 'GET'
+})
+  .then((response) => response.json())
+  .then((result) => {
+    // result is { success: boolean, data: an array of todo item }
+    console.log('result', result)
+  })
+```
+
+2. `POST /api/todos` - Add todo (payload: title)
+
+**Example**
+```typescript
+fetch(`http://localhost:8080/api/todos/496`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'hello' })
+})
+  .then((response) => response.json())
+  .then((result) => {
+    // result is { success: boolean, data: created todo item }
+    console.log('result', result)
+  })
+```
+
+3. `PUT /api/todos/:todoId` - Update todo (payload: title, archived, completed)
+
+**Example**
+```typescript
+fetch(`http://localhost:8080/api/todos/496`, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ archived: false })
+})
+  .then((response) => response.json())
+  .then((result) => {
+    // result is { success: boolean, data: updated todo item }
+    console.log('result', result)
+  })
+```
+
 4. `DELETE /api/todos/:todoId` - Delete todo
+
+**Example**
+```typescript
+fetch(`http://localhost:8080/api/todos/496`, {
+  method: 'DELETE'
+})
+  .then((response) => response.json())
+  .then((result) => {
+    // result is { success: boolean, data: deleted todo item }
+    console.log('result', result)
+  })
+```
