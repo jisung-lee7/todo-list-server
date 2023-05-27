@@ -50,7 +50,11 @@ fetch(`http://localhost:8080/api/todos/496`, {
   })
 ```
 
-2. `POST /api/todos` - Add todo (payload: title)
+2. `POST /api/todos` - Add todo
+
+**Payload**
+
+- title: string (required)
 
 **Example**
 ```typescript
@@ -68,7 +72,13 @@ fetch(`http://localhost:8080/api/todos/496`, {
   })
 ```
 
-3. `PUT /api/todos/:todoId` - Update todo (payload: title, archived, completed)
+3. `PUT /api/todos/:todoId` - Update todo
+
+**Payload**
+
+- title: string (optional)
+- archived: boolean (optional)
+- completed: boolean (optional)
 
 **Example**
 ```typescript
