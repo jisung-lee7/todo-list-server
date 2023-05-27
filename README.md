@@ -8,6 +8,8 @@ docker compose up
 
 ### API urls
 
+Express server is running on port `8080`
+
 #### schema
 ```typescript
 interface Todo {
