@@ -40,7 +40,7 @@ interface Todo {
 
 **Example**
 ```typescript
-fetch(`http://localhost:8080/api/todos/496`, {
+fetch(`http://localhost:8080/api/todos`, {
   method: 'GET'
 })
   .then((response) => response.json())
@@ -58,7 +58,7 @@ fetch(`http://localhost:8080/api/todos/496`, {
 
 **Example**
 ```typescript
-fetch(`http://localhost:8080/api/todos/496`, {
+fetch(`http://localhost:8080/api/todos`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
