@@ -15,7 +15,7 @@ Express server is running on port `8080`
 interface Todo {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   completed: boolean;
   archived: boolean;
   createdAt: string;
