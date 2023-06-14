@@ -44,9 +44,9 @@ fetch(`http://localhost:8080/api/todos`, {
   method: 'GET'
 })
   .then((response) => response.json())
-  .then((result) => {
-    // result is { success: boolean, data: an array of todo item }
-    console.log('result', result)
+  .then((todos) => {
+    // result is an array of todo item
+    console.log('todos', todos)
   })
 ```
 
@@ -66,9 +66,9 @@ fetch(`http://localhost:8080/api/todos`, {
   body: JSON.stringify({ title: 'hello' })
 })
   .then((response) => response.json())
-  .then((result) => {
-    // result is { success: boolean, data: created todo item }
-    console.log('result', result)
+  .then((createdTodo) => {
+    // result is created todo item
+    console.log('createdTodo', createdTodo)
   })
 ```
 
@@ -90,9 +90,9 @@ fetch(`http://localhost:8080/api/todos/496`, {
   body: JSON.stringify({ archived: false })
 })
   .then((response) => response.json())
-  .then((result) => {
-    // result is { success: boolean, data: updated todo item }
-    console.log('result', result)
+  .then((updatedTodo) => {
+    // result is updated todo item
+    console.log('updatedTodo', updatedTodo)
   })
 ```
 
@@ -104,8 +104,8 @@ fetch(`http://localhost:8080/api/todos/496`, {
   method: 'DELETE'
 })
   .then((response) => response.json())
-  .then((result) => {
-    // result is { success: boolean, data: deleted todo item }
-    console.log('result', result)
+  .then((deletedTodo) => {
+    // result is deleted todo item
+    console.log('deletedTodo', deletedTodo)
   })
 ```
