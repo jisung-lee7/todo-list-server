@@ -18,15 +18,9 @@ app.get("/api/todos", async (req: Request, res: Response) => {
         createdAt: "asc",
       },
     });
-    return res.json({
-      success: true,
-      data: allTodos,
-    });
+    return res.json(allTodos);
   } catch (error) {
-    return res.json({
-      success: false,
-      message: error,
-    });
+    return res.json({ type: 'ERROR', error });
   }
 });
 
@@ -39,15 +33,9 @@ app.post("/api/todos", async (req: Request, res: Response) => {
         description,
       },
     });
-    return res.json({
-      success: true,
-      data: newTodo,
-    });
+    return res.json(newTodo);
   } catch (error) {
-    return res.json({
-      success: false,
-      message: error,
-    });
+    return res.json({ type: 'ERROR', error });
   }
 });
 
@@ -64,15 +52,9 @@ app.put("/api/todos/:id", async (req: Request, res: Response) => {
         ...(archived !== undefined && { archived }),
       },
     });
-    return res.json({
-      success: true,
-      data: updatedTodo,
-    });
+    return res.json(updatedTodo);
   } catch (error) {
-    return res.json({
-      success: false,
-      message: error,
-    });
+    return res.json({ type: 'ERROR', error });
   }
 });
 
@@ -84,15 +66,9 @@ app.delete("/api/todos/:id", async (req: Request, res: Response) => {
         id,
       },
     });
-    return res.json({
-      success: true,
-      data: deletedTodo,
-    });
+    return res.json(deletedTodo);
   } catch (error) {
-    return res.json({
-      success: false,
-      message: error,
-    });
+    return res.json({ type: 'ERROR', error });
   }
 });
 
